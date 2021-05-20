@@ -1,0 +1,55 @@
+st1
+{
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding:0.5vw; /* Поля вокруг текста */
+    background: #f3bc00; /* Цвет фона */
+    color: #000000; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+}
+H1{
+    font-size: medium;
+    color: #1bd9d2;
+}
+
+html{
+    height:100%;
+    background:linear-gradient(#1bd9d0, #9a27ff)
+}
+body {
+    font-size: 4vw;
+
+}
+
+input{
+    font-size: 3vw;
+    height: 4vw;
+    width: 15vw;
+}
+
+button{
+    font-size: 3vw;
+    height: 5vw;
+    width: 15vw;
+}
+.quest {
+    color: #800000;
+    cursor: pointer;
+    padding:  4vw;
+    border-radius: 5vw;
+
+}
+.hint {
+    width: 100%;
+
+    display: none;
+    text-align: left;
+    font-weight: normal;
+    font-size: 3vw;
+    color: #000000;
+    border-radius: 5vw;
+
+}
+.quest:hover .hint {
+    display: block;
+}
