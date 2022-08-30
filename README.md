@@ -1,3 +1,3 @@
 # MathRun
-JS game for verbal counting (educational project)
+JS game for verbal counting (school educational project)
 http://math.run.taburetca.beget.tech/
