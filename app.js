@@ -51,54 +51,54 @@ function dobav(dtime) {
     dt += dtime;
 
 }
-function task() {
-    let x, y, rez, zn, zadanie;
-    x = Math.round(Math.random() * 100 + 1);
-    y = Math.round(Math.random() * 100 + 1);
-    zn = Math.round(Math.random() * 100 + 1) % 4;
-    //console.log(zn);
-    if (zn === 0) {
-        rez = x+y
-        zadanie = (x + '+' + y);
-    } else if (zn === 1) {
-        rez = x-y
-        zadanie = x + '-' + y;
-    } else if (zn === 2) {
-        rez = x*y
-        zadanie = x + '*' + y;
-    } else if (zn === 3) {
-        x = Math.round(Math.random() * 10 + 1);
-        rez = x
-        zadanie = x*y + '/' + y;
-    }
-    console.log(b);
-    if (b == 452) {
-        console.log("hey!!!!!!!")
-        document.getElementById("aud").innerHTML='<audio autoplay controls><source src="Xtal.mp3" type="audio/mpeg"></audio>';
-    }
-    if (b == 233.8) {
-        console.log("hey!!!!!!!")
-        document.getElementById("aud").innerHTML='<audio autoplay controls><source src="Check_It_Check_Out.mp3" type="audio/mpeg"></audioautoplay>';
-    }
+ function task() {
+     let x, y, rez, zn, zadanie;
+     const difficulty = document.getElementById('difficulty').value;  // Получаем выбранную сложность
 
-    if (b == 12.11) {
-        console.log("hey!!!!!!!")
-        rez = 0;
-    }
-    document.getElementById("Task").innerHTML='<span>задание: '+zadanie+' = <input type="text2"  id="inp_4"> </span>';
-    document.getElementById("inp_4").focus()
-    document.getElementById("inp_4").addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-            let k =  document.getElementById('inp_4').value
-            k = parseFloat(k);
-            //console.log(k);
-            if (k === rez){
-                dobav(5)
-                score++;
-                document.getElementById("score").innerHTML='<span>score: '+score+' </span>';
-            }
-            task()
-        }
-    });
+     // Генерация чисел в зависимости от сложности
+     if (difficulty === '1') {
+         x = Math.round(Math.random() * 9 + 1);  // Однозначные числа от 1 до 9
+         y = Math.round(Math.random() * 9 + 1);  // Однозначные числа от 1 до 9
+     } else if (difficulty === '2') {
+         x = Math.round(Math.random() * 90 + 10);  // Двузначные числа от 10 до 99
+         y = Math.round(Math.random() * 90 + 10);  // Двузначные числа от 10 до 99
+     } else {
+         x = Math.round(Math.random() * 900 + 100);  // Двузначные числа от 100 до 999
+         y = Math.round(Math.random() * 900 + 100);  // Двузначные числа от 100 до 999
+     }
 
-}
+     zn = Math.round(Math.random() * 100 + 1) % 4;
+
+     if (zn === 0) {
+         rez = x + y;
+         zadanie = (x + '+' + y);
+     } else if (zn === 1) {
+         rez = x - y;
+         zadanie = x + '-' + y;
+     } else if (zn === 2) {
+         rez = x * y;
+         zadanie = x + '*' + y;
+     } else if (zn === 3) {
+         x = Math.round(Math.random() * 10 + 1);  // Это специально для деления
+         rez = x;
+         zadanie = x * y + '/' + y;
+     }
+
+     // Вставляем задание на страницу
+     document.getElementById("Task").innerHTML = '<span>задание: ' + zadanie + ' = <input type="text" id="inp_4"> </span>';
+     document.getElementById("inp_4").focus();
+
+     // Обработчик для ввода ответа
+     document.getElementById("inp_4").addEventListener("keyup", function(event) {
+         if (event.key === "Enter") {
+             let k = parseFloat(document.getElementById('inp_4').value);
+             if (k === rez) {
+                 dobav(5);
+                 score++;
+                 document.getElementById("score").innerHTML = '<span>score: ' + score + ' </span>';
+             }
+             task();
+         }
+     });
+ }
+
