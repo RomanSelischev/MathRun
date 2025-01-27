@@ -14,7 +14,7 @@
     <div class="version-info-content">
         <span class="close" onclick="toggleVersionInfo()">&times;</span>
         <a href="http://backup.taburetca.beget.tech/">Ссылка на прошлую версию</a>
-        <h4>Текущая версия: 0.8.6</h4>
+        <h4>Текущая версия: 0.8.7</h4>
         <ul>
             <li>0.1 обратный отсчет</li>
             <li>0.2 обратный отсчет с добавлением времени</li>
@@ -24,9 +24,9 @@
             <li>0.6 обновление оформления, добавление плана</li>
             <li>0.7 добавление примеров с "*" "/" "-"</li>
             <li>0.8 добавление счета, ускорения обратного отсчета, бета версия (рассылка с просьбой найти баги)</li>
-            <li>0.85 изменение вида всблывающего окна с информацией о версиях</li>
-            <li>0.86 добавления уровня сложнойсти</li>
-            <li>0.87 добавления выбора операций (+ - * /)</li>
+            <li>0.8.5 изменение вида всблывающего окна с информацией о версиях</li>
+            <li>0.8.6 добавления уровня сложнойсти</li>
+            <li>0.8.7 добавления выбора операций (+ - * /)</li>
             <li>0.9 bug fixed, улучшение оформления</li>
             <li>1.0 релиз</li>
             <li>1.5 добавление топ рейтинга</li>
@@ -50,6 +50,24 @@
     <option value="3">трехзначные числа</option>
 </select></p>
 
+<p>Выберите знаки операции:</p>
+<label class="checkbox-container">
+    <input type="checkbox" id="plus" onclick="toggleSign('+')">
+    <span class="checkbox-custom">+</span>
+</label>
+<label class="checkbox-container">
+    <input type="checkbox" id="minus" onclick="toggleSign('-')">
+    <span class="checkbox-custom">-</span>
+</label>
+<label class="checkbox-container">
+    <input type="checkbox" id="multiply" onclick="toggleSign('*')">
+    <span class="checkbox-custom">*</span>
+</label>
+<label class="checkbox-container">
+    <input type="checkbox" id="divide" onclick="toggleSign('/')">
+    <span class="checkbox-custom">/</span>
+</label>
+</p>
 <!-- Ввод времени -->
 Введите начальное время: <input type="text" class="form-control" id="inp_1" value="10">
 <button class="but" id="bot1" onclick="StartTimer(parseFloat(document.getElementById('inp_1').value) + 1); task()">Начать</button>
