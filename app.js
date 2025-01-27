@@ -1,5 +1,27 @@
  //САЙТ http://taburetca.beget.tech/
 let dt, b, score = 0, BestScore = 0;
+
+ // Функция для отображения основного окна с информацией о версиях
+ function toggleVersionInfo() {
+     var versionInfo = document.getElementById("versionInfo");
+     if (versionInfo.style.display === "block") {
+         versionInfo.style.display = "none";
+     } else {
+         versionInfo.style.display = "block";
+     }
+ }
+
+ // Функция для отображения вложенного окна с дополнительной информацией
+ function toggleNestedInfo() {
+     var nestedInfo = document.getElementById("nestedInfo");
+     if (nestedInfo.style.display === "block") {
+         nestedInfo.style.display = "none";
+     } else {
+         nestedInfo.style.display = "block";
+     }
+ }
+
+
 function StartTimer(t) {
     dt = t
     b = t

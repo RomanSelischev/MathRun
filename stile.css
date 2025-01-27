@@ -1,55 +1,121 @@
-st1
-{
-    position: fixed; /* Фиксированное положение */
-    left: 0; bottom: 0; /* Левый нижний угол */
-    padding:0.5vw; /* Поля вокруг текста */
-    background: #f3bc00; /* Цвет фона */
-    color: #000000; /* Цвет текста */
-    width: 100%; /* Ширина слоя */
-}
-H1{
-    font-size: medium;
-    color: #1bd9d2;
+.version-info {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-html{
-    height:100%;
-    background:linear-gradient(#1bd9d0, #9a27ff)
+.version-info-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 2vh;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 90%;
+    max-height: 85%;
+    overflow-y: auto; /* Прокрутка по вертикали, если содержимое выходит за пределы */
+    font-size: 2.5vh; /* Шрифт будет уменьшаться при уменьшении окна */
+    box-sizing: border-box;
 }
+
+/* Кнопка закрытия окна */
+.version-info .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Стиль кнопки закрытия при наведении */
+.version-info .close:hover,
+.version-info .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для вложенного окна */
+.nested-info {
+    margin-top: 20px;
+}
+
+.nested-info-content {
+    display: none; /* Скрыть вложенное окно */
+    background-color: #f3f3f3;
+    padding: 2vh;
+    border: 1px solid #888;
+    font-size: 2vh; /* Меньше для вложенного окна */
+}
+
+.nested-info button {
+    padding: 20px;
+    background-color: #ac00e0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 10px; /* Скругленные углы */
+}
+
+.nested-info button:hover {
+    background-color: #17a0a5;
+}
+
+st1 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 0.5vw;
+    background: #f3bc00;
+    color: #000000;
+    width: 100%;
+}
+
+html {
+    height: 100%;
+    background: linear-gradient(#1bd9d0, #9a27ff);
+}
+
 body {
     font-size: 4vw;
-
 }
 
-input{
+input {
     font-size: 3vw;
     height: 4vw;
     width: 15vw;
 }
 
-button{
+button {
     font-size: 3vw;
     height: 5vw;
     width: 15vw;
 }
+
 .quest {
     color: #800000;
     cursor: pointer;
-    padding:  4vw;
+    padding: 4vw;
     border-radius: 5vw;
-
 }
+
 .hint {
     width: 100%;
-
     display: none;
     text-align: left;
     font-weight: normal;
     font-size: 3vw;
     color: #000000;
     border-radius: 5vw;
-
 }
+
 .quest:hover .hint {
     display: block;
 }

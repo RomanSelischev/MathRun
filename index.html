@@ -7,32 +7,54 @@
     <link rel="shortcut icon" href="https://clck.ru/UBjRP" type="image">
 </head>
 <body align="center">
-<h3 >MathRun <span  class="quest">? <span class="hint">
-<notesH>Текущая версия: 0.8.4<br></notesH>
-    <a href="http://backup.taburetca.beget.tech/">ссылка на прошлую версию</a><br>
-   0.1 обратный отсчет<br>
-    0.2 обратный отсчет с добавлением времени<br>
-    0.3 игра с примерами с "+"<br>
-    0.4 альфа версия, получение домена, выход в общий доступ<br>
-    0.5 более точный обратный отсчет, bug fixed<br>
-    0.6 обновление оформления, добавление плана<br>
-    0.7 добавление примеров с "*" "/" "-"<br>
-    0.8 добавление счета, ускорения обратного отсчета, бета версия (рассылка с прозьбой найти баги)<br>
-    0.9 bug fixed, улучшение оформления<br>
-    1.0 релиз<br>
-    1.5 добавление топ рейтинга<br>
-</span></span> </h3>
+<h3>MathRun <span class="quest" onclick="toggleVersionInfo()">? </span></h3>
+
+<!-- Основное модальное окно -->
+<div id="versionInfo" class="version-info">
+    <div class="version-info-content">
+        <span class="close" onclick="toggleVersionInfo()">&times;</span>
+        <a href="http://backup.taburetca.beget.tech/">Ссылка на прошлую версию</a>
+        <h4>Текущая версия: 0.8.5</h4>
+        <ul>
+            <li>0.1 обратный отсчет</li>
+            <li>0.2 обратный отсчет с добавлением времени</li>
+            <li>0.3 игра с примерами с "+"</li>
+            <li>0.4 альфа версия, получение домена, выход в общий доступ</li>
+            <li>0.5 более точный обратный отсчет, bug fixed</li>
+            <li>0.6 обновление оформления, добавление плана</li>
+            <li>0.7 добавление примеров с "*" "/" "-"</li>
+            <li>0.8 добавление счета, ускорения обратного отсчета, бета версия (рассылка с просьбой найти баги)</li>
+            <li>0.85 изменение вида всблывающего окна с информацией о версиях</li>
+            <li>0.9 bug fixed, улучшение оформления</li>
+            <li>1.0 релиз</li>
+            <li>1.5 добавление топ рейтинга</li>
+        </ul>
+
+        <!-- Вложенное модальное окно для версии -->
+        <div class="nested-info">
+            <button onclick="toggleNestedInfo()">Информация о версиях</button>
+            <div id="nestedInfo" class="nested-info-content">
+                <span class="close" onclick="toggleNestedInfo()">&times;</span>
+                <h4>Информация о версиях:</h4>
+                <p>Здесь будет дополнительная информация о каждой версии...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 Введите начальное время: <input type="text" class="form-control" id="inp_1" value="10">
-<button class="but" id = "bot1" onclick="StartTimer(parseFloat(document.getElementById('inp_1').value) + 1);
-task()">Начать</button>
-<p id = "dp" > </p>
-<p id = "Task"></p>
-<p id = "Bscore"></p> <p id = "score"></p>
+<button class="but" id="bot1" onclick="StartTimer(parseFloat(document.getElementById('inp_1').value) + 1); task()">Начать</button>
+
+<p id="dp"></p>
+<p id="Task"></p>
+<p id="Bscore"></p>
+<p id="score"></p>
+
 <script src="app.js"></script>
 
-<p id = "aud"></p>
+<p id="aud"></p>
 <st1>Сайт Селищева Романа <a href="https://vk.com/taburetcas"><img src="https://img.icons8.com/metro/452/vk-com--v1.png"
-alt="вк" width="3%" height="3%" ></a><a href="https://vk.com/taburetcas"></a></st1>
+                                                                   alt="вк" width="3%" height="3%" ></a><a href="https://vk.com/taburetcas"></a></st1>
 
 </body>
 </html>
